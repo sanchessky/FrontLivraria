@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Sanches</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!--Carregar conteudo do backend onload-->
+
+<body onload="carregar_novidades()">
+    <!--Cabeçalho Superior-->
+
+    <header>
+        <!--Menu Black-->
+        <div id="header-black">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">São Paulo, BR</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--Menu Black-->
+
+        <!--Menu-->
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li><a href="#" class="titulo-menu">Categorias</a></li>
+                    <li><a href="esporte.html">Esporte</a></li>
+                    <li><a href="ficcao.html">Ficção</a></li>
+                    <li><a href="romance.html">Romance</a></li>
+                    <li><a href="fantasia.html">fantasia</a></li>
+                    <li><a href="manga.html">Mangá</a></li>
+                    <li><a href="carrinho.html" class="carrinho"><img src="img/cardpay.png"
+                                alt="Carrinho de Compras"></a></li>
+                    <li><a href="usuario.html" class="usuario">Usuário</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--Menu-->
+        <!--formulario e botão de pesquisa-->
+
+        <div id="painel">
+            <form onsubmit="return false" id="pesquisa"><input type="text" placeholder="Pesquise pelo Titulo "
+                    id="pesquita-titulo">
+                <button><img src="img/lupa.png" alt="Clique para pesquisar"></button>
+            </form>
+        </div>
+    </header>
+    <!--Cabeçalho Superior-->
+    <!--Conteúdo-->
+
+    <main>
+        <!---->
+        <section id="novidades">
+            <h2>Novidades</h2>
+            <p class="txtnovidades">Confira nossas Novidades.</p>
+            <div id="livrosnovidades">
+
+            </div>
+
+            <!--seta esquerda-->
+            <div class="seta-esquerda"><img src="img/seta-esquerda.png" alt="seta esquerda"></div>
+            <!--seta direita-->
+            <div class="seta-direita"><img src="img/seta-direita.png" alt="seta direita"></div>
+
+        </section>
+
+    </main>
+    <!--Conteúdo-->
+    <!---->
+    <footer></footer>
+    <!---->
+
+
+
+
+
+
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

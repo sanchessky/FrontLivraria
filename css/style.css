@@ -1,0 +1,210 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+                            /* CABEÇALHO */
+/* Inicio Menu Black*/
+#header-black{
+    background-color: black;
+    padding: 5px;
+
+    
+}
+#header-black nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header-black nav ul li{
+    width: 150px;
+}
+#header-black nav ul li a{
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+#header-black nav ul li a:hover{
+    color: rgb(212, 8, 8);
+
+}
+/*Final do Menu Black*/
+/*Inicio Menu */
+#menu{
+    padding: 10px 30px;
+    background-color: rgb(236, 241, 241);
+    box-shadow: 0px 5px 5px rgb(160, 15, 160);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#menu nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+#menu nav ul li{
+   width: 150px;
+   text-align: center;
+}
+#menu nav ul li a{
+   text-decoration: none;
+   color: #333;
+   font-family: Verdana;
+   font-size: 10pt;
+ }
+.titulo-menu{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12pt;
+}
+.usuario{
+    padding: 7px 15px;
+    background-color: blueviolet;
+    color: #fff !important;
+    border: 1px solid blueviolet;
+    border-radius: 9px;
+    
+}
+/*Final do Menu */
+/*Painel, Formulario e botão de pesquisa */
+#painel{
+    background-image: url("https://visitesaopaulo.com/wp-content/uploads/2022/10/Livraria-NoveSete-Divulgacao.png");
+    height: 400px;
+    margin-top: 7px;
+    background-size: 100%;
+    padding-top: 100px;
+    
+}
+#painel form{
+    margin-left: 100px;
+    width: 400px;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+#painel form input{
+    border: 0px;
+    width: 320px;
+    margin-right: 10px;
+    padding: 7px;
+    outline: none;
+}
+#painel form button{
+    background-color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+}
+#painel form img{
+    width: 18px;
+    height: 18px;
+}
+
+
+/* Final Painel, Formulario e botão de pesquisa */
+/* Conteúdo */
+main{
+    margin: 50px auto;
+    width: 85%;
+    border: 1px solid red;
+}
+#novidades{
+    background-color: white;
+}
+#livrosnovidades{
+    background-color: white;
+    display: flex;
+    
+}
+.livro{
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(141, 255, 141);
+}
+.livro img{
+    width: 100%;
+
+}
+.livro h3{
+   font-family: Arial;
+   margin-left: 5px;
+}
+.livro .preco{
+    font-family: Arial;
+    margin-left: 5px;
+    color: blueviolet;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+#livrosnovidades div button{
+    width: 100%;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#livrosnovidades div button img{
+    width: 25px;
+    height: 25px;
+}
+#livrosnovidades div button p{
+    font-size: 8pt;
+    color: blueviolet
+}
+#novidades h2{
+    font-family:  Tahoma;
+    font-size: 15pt;
+    margin: 10px;
+
+}
+.txtnovidades{
+    font-family: Tahoma;
+    font-size: 8pt;
+    word-spacing: 5px;
+    margin: 10px;
+}
+
+/*seta direita e seta esuqerda*/
+#novidades .seta-esquerda{
+    width: 33px;
+    position: relative;
+    top: -340px;
+    left: -35px;
+    border: 1px solid rgb(239, 0, 124);
+    transition: ease 0.5s;
+    cursor: pointer;
+}
+#novidades .seta-direita{
+    width: 33px;
+    position: relative;
+    top: -380px;
+    left: 1210px ;
+    border: 1px solid rgb(239, 0, 124);
+    transition: ease 0.5s;
+    cursor: pointer;
+
+}
+#novidades .seta-esquerda:hover{
+    transform: scale(1.1);
+}
+#novidades .seta-direita:hover{
+    transform: scale(1.1);
+}
