@@ -20,3 +20,28 @@ function carregar_novidades() {
         })
 
 }
+
+let pe = 0
+function rolarNovidadesEsquerda() {
+    if (pe < -2200) {
+        pe = -2200
+    }
+    else {
+        pe -= 200;
+    }
+    const livrosnovidades = document.getElementById("livrosnovidades");
+    livrosnovidades.style.marginLeft = `${pe}px`
+    //testeconsole.log(livrosnovidades.style.marginLeft)
+}
+function rolarNovidadesDireita() {
+    
+    if (pe > 0) {
+        pe = 0
+    }
+    else {
+        pe += 200;
+    }
+    const livrosnovidades = document.getElementById("livrosnovidades");
+    livrosnovidades.style.marginLeft = `${pe}px`
+    // teste console.log(livrosnovidades.style.marginLeft)
+}

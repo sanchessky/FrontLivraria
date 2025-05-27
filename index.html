@@ -51,24 +51,47 @@
         </div>
     </header>
     <!--Cabeçalho Superior-->
-    <!--Conteúdo-->
 
+    <!--Conteúdo -->
     <main>
-        <!---->
+        <!--Novidades livros mais vendidos-->
         <section id="novidades">
             <h2>Novidades</h2>
-            <p class="txtnovidades">Confira nossas Novidades.</p>
+            <p class="txtnovidades">Confira nossas Novidades com os ultimos 10 livros.</p>
             <div id="livrosnovidades">
-
+                <!--Caregamento dos livros do backand-->
             </div>
 
-            <!--seta esquerda-->
-            <div class="seta-esquerda"><img src="img/seta-esquerda.png" alt="seta esquerda"></div>
-            <!--seta direita-->
-            <div class="seta-direita"><img src="img/seta-direita.png" alt="seta direita"></div>
+
 
         </section>
 
+        <!--seta esquerda-->
+        <div class="seta-esquerda" onclick="rolarNovidadesDireita()"><img src="img/seta-esquerda.png"
+                alt="seta esquerda"></div>
+        <!--seta direita-->
+        <div class="seta-direita" onclick="rolarNovidadesEsquerda()"><img src="img/seta-direita.png" alt="seta direita">
+        </div>
+        <!--Fim Novidades livros mais vendidos-->
+
+        <!--Mais Vendidos-->
+        <section id="maisvendidos">
+            <h2>Mais Vendidos</h2>
+            <p class="txtmaisvendidos">Confira a lista dos Livros mais vendidos.</p>
+            <div id="livrosmaisvendidos">
+                <!--Caregamento dos livros do backand-->
+            </div>
+
+
+
+        </section>
+        <!---->
+        <!--seta esquerda-->
+        <div class="seta-esquerda" onclick="rolarmaisvendidosDireita()"><img src="img/seta-esquerda.png"
+                alt="seta esquerda"></div>
+        <!--seta direita-->
+        <div class="seta-direita" onclick="rolarmaisvendidosEsquerda()"><img src="img/seta-direita.png"
+                alt="seta direita"></div>
     </main>
     <!--Conteúdo-->
     <!---->

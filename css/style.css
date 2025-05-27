@@ -64,6 +64,7 @@
     padding: 7px 15px;
     background-color: blueviolet;
     color: #fff !important;
+    /*teste(border)*/
     border: 1px solid blueviolet;
     border-radius: 9px;
     
@@ -83,6 +84,7 @@
     width: 400px;
     height: 35px;
     padding: 5px;
+    /*teste(border)*/
     border: 1px solid blueviolet;
     border-radius: 10px;
     display: flex;
@@ -109,21 +111,23 @@
     width: 18px;
     height: 18px;
 }
-
-
 /* Final Painel, Formulario e botão de pesquisa */
 /* Conteúdo */
 main{
     margin: 50px auto;
     width: 85%;
-    border: 1px solid red;
+    /*teste(border)
+    border: 1px solid red;*/
 }
 #novidades{
     background-color: white;
+    width: 80vw;
+    overflow: hidden;
 }
 #livrosnovidades{
     background-color: white;
     display: flex;
+    transition: ease 0.5s;
     
 }
 .livro{
@@ -132,10 +136,12 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid rgb(141, 255, 141);
+    /*teste(border)
+    border: 1px solid rgb(141, 255, 141);*/
 }
 .livro img{
-    width: 100%;
+    width: 190px;
+    height: 260px;
 
 }
 .livro h3{
@@ -182,22 +188,26 @@ main{
     margin: 10px;
 }
 
-/*seta direita e seta esuqerda*/
-#novidades .seta-esquerda{
+/*seta direita e seta esquerda*/
+.seta-esquerda{
     width: 33px;
     position: relative;
     top: -340px;
     left: -35px;
-    border: 1px solid rgb(239, 0, 124);
+    /*teste(border)
+    border: 1px solid rgb(0, 24, 239);*/
     transition: ease 0.5s;
     cursor: pointer;
+    
+
 }
-#novidades .seta-direita{
+.seta-direita{
     width: 33px;
     position: relative;
-    top: -380px;
+    top: -378px;
     left: 1210px ;
-    border: 1px solid rgb(239, 0, 124);
+    /*teste(border)
+    border: 1px solid rgb(0, 24, 239);*/
     transition: ease 0.5s;
     cursor: pointer;
 
