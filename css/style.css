@@ -248,7 +248,7 @@ main{
     cursor: pointer;
     transform: rotate();
     filter: blur(0px);
-    
+
 }
 #livrosautores{
     display: flex;
@@ -325,4 +325,42 @@ footer{
     width: 25px;
     height: 25px;
     margin: 10px;
+}
+/*Esporte, Ficção, Fantasia, Mangá, Romance*/
+main h2{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 30pt;
+    font-style: italic;
+    margin: 20px;
+}
+#lstlivros{
+    display: flex;
+    flex-wrap: wrap;
+}
+.livesporte, .livficcao, .livfantasia, .livmanga, .livromance{
+    width: 23%;
+    
+    margin: 10px;
+}
+.livesporte img, .livficcao img, .livfantasia img, .livmanga img, .livromance img{
+    width: 100%;
+    height: 280px;
+    
+    
+}
+.livesporte h3, .livficcao h3, .livfantasia h3, .livmanga h3, .livromance h3{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 12pt;
+    
+}
+.livpreco{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 10pt;
+    font-weight: bold;
+    color: #000;
+}
+.livesporte a , .livficcao a, .livfantasia a, .livmanga a, .livromance a{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 10pt;
+    text-decoration: none;
 }
