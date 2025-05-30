@@ -65,7 +65,7 @@ function carregar_maisvendidos() {
             livros_maisvendidos.innerHTML = saida;
         })
     carregar_autores()
-    
+
 }
 
 function carregar_autores() {
@@ -97,7 +97,7 @@ function carregar_esporte() {
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
-                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+                <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
             livros_esporte.innerHTML = saida;
@@ -116,7 +116,7 @@ function carregar_ficcao() {
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
-                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+                <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
             livros_ficcao.innerHTML = saida;
@@ -135,7 +135,7 @@ function carregar_romance() {
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
-                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+                <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
             livros_romance.innerHTML = saida;
@@ -154,7 +154,7 @@ function carregar_fantasia() {
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
-                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+                <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
             livros_fantasia.innerHTML = saida;
@@ -173,10 +173,18 @@ function carregar_manga() {
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
-                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+                <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
             livros_manga.innerHTML = saida;
         })
 
+}
+function carregar_detalhes() {
+    let idlivro = window.location.search.split('=');
+    idlivro = idlivro[1];
+
+    const div_detalhes = document.getElementById("detalhes");
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/manga")
 }
