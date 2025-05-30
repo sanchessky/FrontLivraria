@@ -248,6 +248,7 @@ main{
     cursor: pointer;
     transform: rotate();
     filter: blur(0px);
+    
 }
 #livrosautores{
     display: flex;

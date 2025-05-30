@@ -18,8 +18,8 @@ function carregar_novidades() {
             })
             livros_novidades.innerHTML = saida;
         })
-        carregar_maisvendidos()
-        
+    carregar_maisvendidos()
+
 }
 
 let pe = 0
@@ -35,7 +35,7 @@ function rolarNovidadesEsquerda() {
     //testeconsole.log(livrosnovidades.style.marginLeft)
 }
 function rolarNovidadesDireita() {
-    
+
     if (pe > 0) {
         pe = 0
     }
@@ -64,7 +64,8 @@ function carregar_maisvendidos() {
             })
             livros_maisvendidos.innerHTML = saida;
         })
-        carregar_autores()
+    carregar_autores()
+    
 }
 
 function carregar_autores() {
@@ -81,6 +82,101 @@ function carregar_autores() {
             </div>`
             })
             livros_autores.innerHTML = saida;
+        })
+}
+
+function carregar_esporte() {
+    const livros_esporte = document.getElementById("lstlivros")
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/Esporte")
+        .then((res) => res.json())
+        .then((liv) => {
+            liv.map((li) => {
+                saida += `
+            <div class="livesporte">
+                <img src="${li.foto1}">
+                <h3>${li.nome}</h3>
+                <p class=livpreco>R$ ${li.preco}</p>
+                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+            </div>`
+            })
+            livros_esporte.innerHTML = saida;
+        })
+
+}
+function carregar_ficcao() {
+    const livros_ficcao = document.getElementById("lstlivros")
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/ficcao")
+        .then((res) => res.json())
+        .then((liv) => {
+            liv.map((li) => {
+                saida += `
+            <div class="livficcao">
+                <img src="${li.foto1}">
+                <h3>${li.nome}</h3>
+                <p class=livpreco>R$ ${li.preco}</p>
+                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+            </div>`
+            })
+            livros_ficcao.innerHTML = saida;
+        })
+
+}
+function carregar_romance() {
+    const livros_romance = document.getElementById("lstlivros")
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/romance")
+        .then((res) => res.json())
+        .then((liv) => {
+            liv.map((li) => {
+                saida += `
+            <div class="livromance">
+                <img src="${li.foto1}">
+                <h3>${li.nome}</h3>
+                <p class=livpreco>R$ ${li.preco}</p>
+                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+            </div>`
+            })
+            livros_romance.innerHTML = saida;
+        })
+
+}
+function carregar_fantasia() {
+    const livros_fantasia = document.getElementById("lstlivros")
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/fantasia")
+        .then((res) => res.json())
+        .then((liv) => {
+            liv.map((li) => {
+                saida += `
+            <div class="livfantasia">
+                <img src="${li.foto1}">
+                <h3>${li.nome}</h3>
+                <p class=livpreco>R$ ${li.preco}</p>
+                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+            </div>`
+            })
+            livros_fantasia.innerHTML = saida;
+        })
+
+}
+function carregar_manga() {
+    const livros_manga = document.getElementById("lstlivros")
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/manga")
+        .then((res) => res.json())
+        .then((liv) => {
+            liv.map((li) => {
+                saida += `
+            <div class="livmanga">
+                <img src="${li.foto1}">
+                <h3>${li.nome}</h3>
+                <p class=livpreco>R$ ${li.preco}</p>
+                <a href=detalhes?id=${li.id}>Mais detalhe</a>                 
+            </div>`
+            })
+            livros_manga.innerHTML = saida;
         })
 
 }
