@@ -185,6 +185,12 @@ function carregar_detalhes() {
     idlivro = idlivro[1];
 
     const div_detalhes = document.getElementById("detalhes");
-    let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/manga")
+    fetch(`http://127.0.0.1:5000/api/v1/produto/listarporid/${idlivro}`)
+    .then((res) => res.json())
+    .then((dt) => {
+        console.log(dt)
+    })
+    .catch ((error)=>{
+        console.log(error)
+    })
 }
