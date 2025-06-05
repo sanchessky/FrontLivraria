@@ -364,3 +364,56 @@ main h2{
     font-size: 10pt;
     text-decoration: none;
 }
+
+#detalhes{
+    display: flex;
+    padding: 50px;
+}
+
+#div_capa img{
+    width: 300px;
+    height: 400px;
+}
+#div_miniatura {
+    display: flex;
+    justify-content: space-between;
+}
+
+#div_miniatura img{
+    width: 90px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#div_titulo_descricao{
+    padding: 0px 10px ;
+}
+
+#div_titulo_descricao h3{
+    font-family: 'Lucida Sans';
+    font-size: 20pt;
+    margin-bottom: 30px;
+}
+#div_titulo_descricao p{
+    font-family: 'Lucida Sans';
+    line-height: 20pt;
+}
+#div_carrinho{
+    text-align: right;
+}
+#div_carrinho p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20pt;
+    color: darkred;
+    margin-bottom: 100px;
+    font-weight: bold;
+}
+#div_carrinho button {
+    width: 200px;
+    background-color: rgb(171, 153, 189);
+    color: white;
+    border: 0px;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
+}

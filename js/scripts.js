@@ -179,18 +179,108 @@ function carregar_manga() {
             livros_manga.innerHTML = saida;
         })
 
+} 
+let prd_carrinho = [];
+function adicionar_carrinho(foto,nome,preco,qtd) {
+    
+    let prd = {
+        nome_produto:nome,
+        foto_produto:foto,
+        preco_produto:preco,
+        qnd_produto:qnt
+    }
+    prd_carrinho.push(prd)
+
+    //add lista de produto do carrinho ao banco de dados do navegador, usando o comando localstorage
+    window.localStorage.setItem("carrnho", JSON.stringify({prd_carrinho}))
+
 }
+
 function carregar_detalhes() {
     let idlivro = window.location.search.split('=');
     idlivro = idlivro[1];
 
     const div_detalhes = document.getElementById("detalhes");
     fetch(`http://127.0.0.1:5000/api/v1/produto/listarporid/${idlivro}`)
-    .then((res) => res.json())
-    .then((dt) => {
-        console.log(dt)
-    })
-    .catch ((error)=>{
-        console.log(error)
-    })
+        .then((res) => res.json())
+        .then((dt) => {
+            console.log(dt)
+
+            let div_img = document.createElement("div");
+            div_img.setAttribute("id", "div_img")
+            let div_capa = document.createElement("div");
+            div_capa.setAttribute("id", "div_capa")
+            let img_capa = document.createElement("img");
+            img_capa.src = dt[0].foto1;
+
+            //adicionar a imagem da capa a div capa
+            div_capa.appendChild(img_capa);
+            //adicionar a div capa a div imagem
+            div_img.appendChild(div_capa);
+
+
+            let div_miniatura = document.createElement("div");
+            div_miniatura.setAttribute("id", "div_miniatura");
+            let img_miniatura1 = document.createElement("img");
+            let img_miniatura2 = document.createElement("img");
+            let img_miniatura3 = document.createElement("img");
+            img_miniatura1.src = dt[0].foto1;
+            img_miniatura2.src = dt[0].foto2;
+            img_miniatura3.src = dt[0].foto3;
+
+            //adicionar as foto da miniatura dentro da div miniatura
+            div_miniatura.appendChild(img_miniatura1);
+            div_miniatura.appendChild(img_miniatura2);
+            div_miniatura.appendChild(img_miniatura3);
+
+            //colocar a div miniatura dentro da div img
+            div_img.appendChild(div_miniatura);
+            //colocar a div de imagem dentro da div detalhes
+            div_detalhes.appendChild(div_img)
+
+            let div_titulo_descricao = document.createElement("div");
+            div_titulo_descricao.setAttribute("id", "div_titulo_descricao");
+
+            let h3_titulo = document.createElement("h3");
+            h3_titulo.innerHTML = dt[0].nome;
+
+            let p_descricao = document.createElement("p");
+            p_descricao.innerHTML = dt[0].descricao;
+
+            //add o titulo e descrição dentro da div titulo descricao
+            div_titulo_descricao.appendChild(h3_titulo)
+            div_titulo_descricao.appendChild(p_descricao)
+
+            div_detalhes.appendChild(div_titulo_descricao)
+
+
+            let div_carrinho = document.createElement("div");
+            div_carrinho.setAttribute("id", "div_carrinho");
+
+            let p_preco = document.createElement("p");
+            p_preco.innerHTML = dt[0].preco;
+
+            let btn_add_carrinho = document.createElement("button");
+            btn_add_carrinho.innerHTML = "Adicionar ao carrinho";
+
+            btn_add_carrinho.onclick = () => {
+                adicionar_carrinho(dt[0].foto1, dt[0].nome, dt[0].preco, 1);
+            }
+
+            //adicionar o p e btn a div carrinho
+            div_carrinho.appendChild(p_preco)
+            div_carrinho.appendChild(btn_add_carrinho)
+
+            div_detalhes.appendChild(div_carrinho)
+
+
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+}
+
+function carregar_produtos_carrinho(){
+    let produto = window.localStorage.getItem("carrinho")
+    console.log(produto)
 }
