@@ -180,16 +180,16 @@ function carregar_manga() {
         })
 
 } 
-let prd_carrinho = [];
+let produto_carrinho = [];
 function adicionar_carrinho(foto,nome,preco,qtd) {
     
-    let prd = {
+    let produto = {
         nome_produto:nome,
         foto_produto:foto,
         preco_produto:preco,
         qnd_produto:qnt
     }
-    prd_carrinho.push(prd)
+    produto_carrinho.push(produto)
 
     //add lista de produto do carrinho ao banco de dados do navegador, usando o comando localstorage
     window.localStorage.setItem("carrnho", JSON.stringify({prd_carrinho}))
