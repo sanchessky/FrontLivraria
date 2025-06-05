@@ -179,20 +179,20 @@ function carregar_manga() {
             livros_manga.innerHTML = saida;
         })
 
-} 
-let produto_carrinho = [];
-function adicionar_carrinho(foto,nome,preco,qtd) {
-    
+}
+let produto_no_carrinho = [];
+function adicionar_carrinho(foto, nome, preco, qtd) {
+
     let produto = {
-        nome_produto:nome,
-        foto_produto:foto,
-        preco_produto:preco,
-        quantidade_produto:qnd
+        nome_produto: nome,
+        foto_produto: foto,
+        preco_produto: preco,
+        quantidade_produto: qnd
     }
     produto_carrinho.push(produto)
-
+    console.log(produto_carrinho)
     //add lista de produto do carrinho ao banco de dados do navegador, usando o comando localstorage
-    window.localStorage.setItem("carrnho", JSON.stringify({prd_carrinho}))
+    window.localStorage.setItem("carrnho", JSON.stringify({ prd_carrinho }))
 
 }
 
@@ -280,7 +280,13 @@ function carregar_detalhes() {
         })
 }
 
-function carregar_produtos_carrinho(){
+function carregar_produtos_carrinho() {
     let produto = window.localStorage.getItem("carrinho")
     console.log(produto)
 }
+
+const area_carrinho = document.getElementsByClassName("carrinho")[0]
+const div_qtd_itens = document.createElement("dib");
+div_qtd_itens.innerHTML = 5;
+div_qtd_itens.setAttribute("id", "div_qtd_itens");
+area_carrinho.appendChild(div_qtd_itens)
