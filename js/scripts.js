@@ -187,7 +187,7 @@ function adicionar_carrinho(foto,nome,preco,qtd) {
         nome_produto:nome,
         foto_produto:foto,
         preco_produto:preco,
-        qnd_produto:qnt
+        quantidade_produto:qnd
     }
     produto_carrinho.push(produto)
 
