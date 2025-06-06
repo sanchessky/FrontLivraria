@@ -417,3 +417,19 @@ main h2{
     padding: 20px;
     border-radius: 10px;
 }
+#div_qtd_itens{
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 9pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -40px;
+    left: 90px;
+    display: none;
+}

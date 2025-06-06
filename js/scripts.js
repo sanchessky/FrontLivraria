@@ -187,12 +187,12 @@ function adicionar_carrinho(foto, nome, preco, qtd) {
         nome_produto: nome,
         foto_produto: foto,
         preco_produto: preco,
-        quantidade_produto: qnd
+        quantidade_produto: qtd
     }
-    produto_carrinho.push(produto)
-    console.log(produto_carrinho)
+    produto_no_carrinho.push(produto)
+    console.log(produto_no_carrinho)
     //add lista de produto do carrinho ao banco de dados do navegador, usando o comando localstorage
-    window.localStorage.setItem("carrnho", JSON.stringify({ prd_carrinho }))
+    window.localStorage.setItem("carrinho", JSON.stringify({ produto_no_carrinho }))
 
 }
 
@@ -280,13 +280,40 @@ function carregar_detalhes() {
         })
 }
 
-function carregar_produtos_carrinho() {
-    let produto = window.localStorage.getItem("carrinho")
-    console.log(produto)
-}
-
 const area_carrinho = document.getElementsByClassName("carrinho")[0]
-const div_qtd_itens = document.createElement("dib");
-div_qtd_itens.innerHTML = 5;
+const div_qtd_itens = document.createElement("div");
 div_qtd_itens.setAttribute("id", "div_qtd_itens");
 area_carrinho.appendChild(div_qtd_itens)
+
+
+function carregar_produtos_carrinho() {
+
+
+    let produto = window.localStorage.getItem("carrinho");
+    if(produto!=null){
+        document.getElementById("div_qtd_itens").style.display="block"
+    }
+    console.log(produto);
+    console.log(JSON.parse(produto));
+    console.log(JSON.parse(produto).produto_no_carrinho.length);
+    div_qtd_itens.innerHTML = JSON.parse(produto).produto_no_carrinho.length;
+
+    const lista_produto_carrinho = document.getElementById("lista_produto_carrinho")
+    JSON.parse(produto).produto_no_carrinho.map((itens)=>{
+        let mont = `<div>
+        <input type="checkbox" name="selecionado">
+        <img src=${itens.foto_produto}>
+        <h4> ${itens.nome_produto}</h4>
+        <h5> ${itens.preco_produto}</h5>
+        <input type="number" value=1 min=1 max=10 id="qtd">
+        <p class="valor_total">${itens.preco_produto}</p>
+        <img src"img/excluir.png" id="btnexcluir">
+        `
+
+        lista_produto_carrinho.innerHTML+=mont;
+
+
+    })
+
+}
+
