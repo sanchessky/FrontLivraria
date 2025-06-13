@@ -193,13 +193,13 @@ function adicionar_carrinho(id, foto, nome, preco, qtd) {
         foto_produto: foto,
         preco_produto: preco,
         quantidade_produto: qtd
-    }
-    produto_no_carrinho.push(produto)
-    console.log(produto_no_carrinho)
+    };
+    produto_no_carrinho.push(produto);
+    console.log(produto_no_carrinho);
     //add lista de produto do carrinho ao banco de dados do navegador, usando o comando localstorage
-    window.localStorage.setItem(nome_carrinho, JSON.stringify( produto_no_carrinho ))
+    window.localStorage.setItem(nome_carrinho, JSON.stringify( produto_no_carrinho ));
 
-}
+};
 
 function carregar_detalhes() {
     let idlivro = window.location.search.split('=');
@@ -270,32 +270,33 @@ function carregar_detalhes() {
 
             btn_add_carrinho.onclick = () => {
                 adicionar_carrinho(dt[0].id, dt[0].foto1, dt[0].nome, dt[0].preco, 1);
-            }
+            };
 
             //adicionar o p e btn a div carrinho
-            div_carrinho.appendChild(p_preco)
-            div_carrinho.appendChild(btn_add_carrinho)
+            div_carrinho.appendChild(p_preco);
+            div_carrinho.appendChild(btn_add_carrinho);
 
-            div_detalhes.appendChild(div_carrinho)
+            div_detalhes.appendChild(div_carrinho);
 
 
         })
         .catch((error) => {
             console.log(error)
-        })
-}
+        });
+};
 
 const area_carrinho = document.getElementsByClassName("carrinho")[0]
 const div_qtd_itens = document.createElement("div");
 div_qtd_itens.setAttribute("id", "div_qtd_itens");
-area_carrinho.appendChild(div_qtd_itens)
+area_carrinho.appendChild(div_qtd_itens);
 
 
 
 function remover_do_carrinho(id){
-
-    alert(id)
-}
+    produto_no_carrinho = produto_no_carrinho.filter(item => item.id !== id);
+    window.localStorage.setItem(nome_carrinho,JSON.stringify(produto_no_carrinho));
+    window.location.reload();
+};
 
 
 
@@ -305,13 +306,13 @@ function carregar_produtos_carrinho() {
     let produto = window.localStorage.getItem("carrinho");
     if(produto!=null){
         document.getElementById("div_qtd_itens").style.display="block"
-    }
+    };
     console.log(produto);
     console.log(JSON.parse(produto));
     console.log(JSON.parse(produto).length);
     div_qtd_itens.innerHTML = JSON.parse(produto).length;
 
-    const lista_produto_carrinho = document.getElementById("lista_produto_carrinho")
+    const lista_produto_carrinho = document.getElementById("lista_produto_carrinho");
     JSON.parse(produto).map((itens)=>{
         let mont = `<div>
         <input type="checkbox" name="selecionado">
@@ -327,7 +328,7 @@ function carregar_produtos_carrinho() {
         lista_produto_carrinho.innerHTML+=mont;
 
 
-    })
+    });
 
-}
+};
 
