@@ -180,10 +180,15 @@ function carregar_manga() {
         })
 
 }
-let produto_no_carrinho = [];
-function adicionar_carrinho(foto, nome, preco, qtd) {
+
+
+
+let nome_carrinho = "carrinho"
+let produto_no_carrinho = localStorage.getItem(nome_carrinho) ? JSON.parse(localStorage.getItem(nome_carrinho)) : [];
+function adicionar_carrinho(id, foto, nome, preco, qtd) {
 
     let produto = {
+        id:id,
         nome_produto: nome,
         foto_produto: foto,
         preco_produto: preco,
@@ -192,7 +197,7 @@ function adicionar_carrinho(foto, nome, preco, qtd) {
     produto_no_carrinho.push(produto)
     console.log(produto_no_carrinho)
     //add lista de produto do carrinho ao banco de dados do navegador, usando o comando localstorage
-    window.localStorage.setItem("carrinho", JSON.stringify({ produto_no_carrinho }))
+    window.localStorage.setItem(nome_carrinho, JSON.stringify( produto_no_carrinho ))
 
 }
 
@@ -264,7 +269,7 @@ function carregar_detalhes() {
             btn_add_carrinho.innerHTML = "Adicionar ao carrinho";
 
             btn_add_carrinho.onclick = () => {
-                adicionar_carrinho(dt[0].foto1, dt[0].nome, dt[0].preco, 1);
+                adicionar_carrinho(dt[0].id, dt[0].foto1, dt[0].nome, dt[0].preco, 1);
             }
 
             //adicionar o p e btn a div carrinho
@@ -286,6 +291,14 @@ div_qtd_itens.setAttribute("id", "div_qtd_itens");
 area_carrinho.appendChild(div_qtd_itens)
 
 
+
+function remover_do_carrinho(id){
+
+    alert(id)
+}
+
+
+
 function carregar_produtos_carrinho() {
 
 
@@ -295,19 +308,20 @@ function carregar_produtos_carrinho() {
     }
     console.log(produto);
     console.log(JSON.parse(produto));
-    console.log(JSON.parse(produto).produto_no_carrinho.length);
-    div_qtd_itens.innerHTML = JSON.parse(produto).produto_no_carrinho.length;
+    console.log(JSON.parse(produto).length);
+    div_qtd_itens.innerHTML = JSON.parse(produto).length;
 
     const lista_produto_carrinho = document.getElementById("lista_produto_carrinho")
-    JSON.parse(produto).produto_no_carrinho.map((itens)=>{
+    JSON.parse(produto).map((itens)=>{
         let mont = `<div>
         <input type="checkbox" name="selecionado">
         <img src=${itens.foto_produto}>
         <h4> ${itens.nome_produto}</h4>
         <h5> ${itens.preco_produto}</h5>
-        <input type="number" value=1 min=1 max=10 id="qtd">
+        <input type="number" value=1 min=1 max=10 class="qtd">
         <p class="valor_total">${itens.preco_produto}</p>
-        <img src"img/excluir.png" id="btnexcluir">
+        <img src="img/excluir.png" class="btnexcluir" onclick="remover_do_carrinho(${itens.id})">
+        </div>
         `
 
         lista_produto_carrinho.innerHTML+=mont;

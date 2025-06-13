@@ -1,85 +1,98 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-                            /* CABEÇALHO */
+
+/* CABEÇALHO */
 /* Inicio Menu Black*/
-#header-black{
+#header-black {
     background-color: black;
     padding: 5px;
 
-    
+
 }
+
 #header-black nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#header-black nav ul li{
+
+#header-black nav ul li {
     width: 150px;
 }
-#header-black nav ul li a{
+
+#header-black nav ul li a {
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 8pt;
     text-transform: capitalize;
     text-decoration: none;
 }
-#header-black nav ul li a:hover{
+
+#header-black nav ul li a:hover {
     color: rgb(212, 8, 8);
 
 }
+
 /*Final do Menu Black*/
 /*Inicio Menu */
-#menu{
+#menu {
     padding: 10px 30px;
     background-color: rgb(236, 241, 241);
     box-shadow: 0px 5px 5px rgb(160, 15, 160);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-#menu nav ul{
+
+#menu nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
 }
-#menu nav ul li{
-   width: 150px;
-   text-align: center;
+
+#menu nav ul li {
+    width: 150px;
+    text-align: center;
 }
-#menu nav ul li a{
-   text-decoration: none;
-   color: #333;
-   font-family: Verdana;
-   font-size: 10pt;
- }
-.titulo-menu{
+
+#menu nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+
+.titulo-menu {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 12pt;
 }
-.usuario{
+
+.usuario {
     padding: 7px 15px;
     background-color: blueviolet;
     color: #fff !important;
     /*teste(border)*/
     border: 1px solid blueviolet;
     border-radius: 9px;
-    
+
 }
+
 /*Final do Menu */
 /*Painel, Formulario e botão de pesquisa */
-#painel{
+#painel {
     background-image: url("https://visitesaopaulo.com/wp-content/uploads/2022/10/Livraria-NoveSete-Divulgacao.png");
     height: 400px;
     margin-top: 7px;
     background-size: 100%;
     padding-top: 100px;
-    
+
 }
-#painel form{
+
+#painel form {
     margin-left: 100px;
     width: 400px;
     height: 35px;
@@ -92,14 +105,16 @@
     align-items: center;
     justify-content: space-between;
 }
-#painel form input{
+
+#painel form input {
     border: 0px;
     width: 320px;
     margin-right: 10px;
     padding: 7px;
     outline: none;
 }
-#painel form button{
+
+#painel form button {
     background-color: #333;
     width: 30px;
     height: 30px;
@@ -107,30 +122,37 @@
     border: 0px;
     cursor: pointer;
 }
-#painel form img{
+
+#painel form img {
     width: 18px;
     height: 18px;
 }
+
 /* Final Painel, Formulario e botão de pesquisa */
 /* Conteúdo Da area novidade */
-main{
+main {
     margin: 50px auto;
     width: 85%;
     /*teste(border)
     border: 1px solid red;*/
 }
-#novidades, #maisvendidos{
+
+#novidades,
+#maisvendidos {
     background-color: white;
     width: 80vw;
     overflow: hidden;
 }
-#livrosnovidades, #livrosmaisvendidos{
+
+#livrosnovidades,
+#livrosmaisvendidos {
     background-color: white;
     display: flex;
     transition: ease 0.5s;
-    
+
 }
-.livro{
+
+.livro {
     width: 200px;
     margin: 10px;
     display: flex;
@@ -139,16 +161,19 @@ main{
     /*teste(border)
     border: 1px solid rgb(141, 255, 141);*/
 }
-.livro img{
+
+.livro img {
     width: 190px;
     height: 260px;
 
 }
-.livro h3{
-   font-family: Arial;
-   margin-left: 5px;
+
+.livro h3 {
+    font-family: Arial;
+    margin-left: 5px;
 }
-.livro .preco{
+
+.livro .preco {
     font-family: Arial;
     margin-left: 5px;
     color: blueviolet;
@@ -156,7 +181,7 @@ main{
     font-size: 10pt;
 }
 
-#livrosnovidades div button{
+#livrosnovidades div button {
     width: 100%;
     border: 1px solid blueviolet;
     border-radius: 5px;
@@ -167,21 +192,26 @@ main{
     justify-content: center;
     align-items: center;
 }
-#livrosnovidades div button img{
+
+#livrosnovidades div button img {
     width: 25px;
     height: 25px;
 }
-#livrosnovidades div button p{
+
+#livrosnovidades div button p {
     font-size: 8pt;
     color: blueviolet
 }
-#novidades h2, #livrosmaisvendidos h2{
-    font-family:  Tahoma;
+
+#novidades h2,
+#livrosmaisvendidos h2 {
+    font-family: Tahoma;
     font-size: 15pt;
     margin: 10px;
 
 }
-.txtnovidades{
+
+.txtnovidades {
     font-family: Tahoma;
     font-size: 8pt;
     word-spacing: 5px;
@@ -189,7 +219,7 @@ main{
 }
 
 /*seta direita e seta esquerda*/
-.seta-esquerda{
+.seta-esquerda {
     width: 33px;
     position: relative;
     top: -340px;
@@ -198,28 +228,31 @@ main{
     border: 1px solid rgb(0, 24, 239);*/
     transition: ease 0.5s;
     cursor: pointer;
-    
+
 
 }
-.seta-direita{
+
+.seta-direita {
     width: 33px;
     position: relative;
     top: -378px;
-    left: 1210px ;
+    left: 1210px;
     /*teste(border)
     border: 1px solid rgb(0, 24, 239);*/
     transition: ease 0.5s;
     cursor: pointer;
 
 }
-#novidades .seta-esquerda:hover{
-    transform: scale(1.1);
-}
-#novidades .seta-direita:hover{
+
+#novidades .seta-esquerda:hover {
     transform: scale(1.1);
 }
 
-#autores h2{
+#novidades .seta-direita:hover {
+    transform: scale(1.1);
+}
+
+#autores h2 {
     text-align: center;
     font-family: Georgia;
     font-weight: lighter;
@@ -227,14 +260,16 @@ main{
     font-style: italic;
     margin: 50px 0px 10px 0px;
 }
-.txtautores{
+
+.txtautores {
     font-family: Georgia;
     font-size: 15pt;
     text-align: center;
     font-style: italic;
     margin: 10px;
 }
-.autor img{
+
+.autor img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -244,26 +279,30 @@ main{
     filter: blur(2px);
 
 }
-.autor img:hover{
+
+.autor img:hover {
     cursor: pointer;
     transform: rotate();
     filter: blur(0px);
 
 }
-#livrosautores{
+
+#livrosautores {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-.autor{
+
+.autor {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
+
 /*seta direita e seta esquerda*/
-.seta-esquerda-maisvendidos{
+.seta-esquerda-maisvendidos {
     width: 33300px;
     position: relative;
     top: -250px;
@@ -272,28 +311,32 @@ main{
     border: 1px solid rgb(0, 24, 239);*/
     transition: ease 0.5s;
     cursor: pointer;
-    
+
 
 }
-.seta-direita-maisvendidos{
+
+.seta-direita-maisvendidos {
     width: 33px;
     position: relative;
     top: -288.5px;
-    left: 1210px ;
+    left: 1210px;
     /*teste(border)
     border: 1px solid rgb(0, 24, 239);*/
     transition: ease 0.5s;
     cursor: pointer;
 
 }
-#maisvendidos .seta-esquerda-maisvendidos:hover{
+
+#maisvendidos .seta-esquerda-maisvendidos:hover {
     transform: scale(1.1);
 }
-#maisvendidos .seta-direita-maisvendidos:hover{
+
+#maisvendidos .seta-direita-maisvendidos:hover {
     transform: scale(1.1);
 }
+
 /*RodaPé*/
-footer{
+footer {
     height: 300px;
     padding: 50px;
     background-color: #d1cac7;
@@ -301,113 +344,146 @@ footer{
     justify-content: space-between;
     align-items: center;
 }
-#endereco{
+
+#endereco {
     color: #333;
     font-family: 'Franklin Gothic Medium';
     font-size: 12pt;
     line-height: 18pt;
 }
-#menufooter nav ul{
+
+#menufooter nav ul {
     list-style: none;
 }
-#menufooter nav ul li a{
-    color:rgb(58, 22, 22);
+
+#menufooter nav ul li a {
+    color: rgb(58, 22, 22);
     font-family: 'Franklin Gothic Medium';
     text-decoration: none;
     padding: 5px;
 }
-#redes-pagamento{
+
+#redes-pagamento {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-#redes img{
+
+#redes img {
     width: 25px;
     height: 25px;
     margin: 10px;
 }
+
 /*Esporte, Ficção, Fantasia, Mangá, Romance*/
-main h2{
+main h2 {
     font-family: 'Franklin Gothic Medium';
     font-size: 30pt;
     font-style: italic;
     margin: 20px;
 }
-#lstlivros{
+
+#lstlivros {
     display: flex;
     flex-wrap: wrap;
 }
-.livesporte, .livficcao, .livfantasia, .livmanga, .livromance{
+
+.livesporte,
+.livficcao,
+.livfantasia,
+.livmanga,
+.livromance {
     width: 23%;
-    
+
     margin: 10px;
 }
-.livesporte img, .livficcao img, .livfantasia img, .livmanga img, .livromance img{
+
+.livesporte img,
+.livficcao img,
+.livfantasia img,
+.livmanga img,
+.livromance img {
     width: 100%;
     height: 280px;
-    
-    
+
+
 }
-.livesporte h3, .livficcao h3, .livfantasia h3, .livmanga h3, .livromance h3{
+
+.livesporte h3,
+.livficcao h3,
+.livfantasia h3,
+.livmanga h3,
+.livromance h3 {
     font-family: 'Franklin Gothic Medium';
     font-size: 12pt;
-    
+
 }
-.livpreco{
+
+.livpreco {
     font-family: 'Franklin Gothic Medium';
     font-size: 10pt;
     font-weight: bold;
     color: #000;
 }
-.livesporte a , .livficcao a, .livfantasia a, .livmanga a, .livromance a{
+
+.livesporte a,
+.livficcao a,
+.livfantasia a,
+.livmanga a,
+.livromance a {
     font-family: 'Franklin Gothic Medium';
     font-size: 10pt;
     text-decoration: none;
 }
 
-#detalhes{
+#detalhes {
     display: flex;
     padding: 50px;
 }
 
-#div_capa img{
+#div_capa img {
     width: 300px;
     height: 400px;
 }
+
 #div_miniatura {
     display: flex;
     justify-content: space-between;
 }
 
-#div_miniatura img{
+#div_miniatura img {
     width: 90px;
     height: 100px;
     cursor: pointer;
 }
 
-#div_titulo_descricao{
-    padding: 0px 10px ;
+#div_titulo_descricao {
+    padding: 0px 10px;
 }
 
-#div_titulo_descricao h3{
+#div_titulo_descricao h3 {
     font-family: 'Lucida Sans';
     font-size: 20pt;
     margin-bottom: 30px;
 }
-#div_titulo_descricao p{
+
+#div_titulo_descricao p {
     font-family: 'Lucida Sans';
     line-height: 20pt;
 }
-#div_carrinho{
+
+#div_carrinho {
     text-align: right;
 }
-#div_carrinho p{
+
+#div_carrinho p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20pt;
     color: darkred;
     margin-bottom: 100px;
     font-weight: bold;
 }
+
 #div_carrinho button {
     width: 200px;
     background-color: rgb(171, 153, 189);
@@ -417,7 +493,8 @@ main h2{
     padding: 20px;
     border-radius: 10px;
 }
-#div_qtd_itens{
+
+#div_qtd_itens {
     background-color: red;
     color: #fff;
     font-weight: bold;
@@ -432,4 +509,39 @@ main h2{
     top: -40px;
     left: 90px;
     display: none;
+}
+
+#lista_produto_carrinho div {
+    border: 1px double silver;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium';
+    justify-content: space-between;
+}
+
+#lista_produto_carrinho div img {
+    width: 80px;
+    height: 100px;
+    margin: 10px;
+}
+
+#lista_produto_carrinho div .btnexcluir {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#efetuar_pagamento {
+    border: 0px;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20pt;
+    padding: 10px 20px;
+    background-color: aqua;
+    color: black;
+    border-radius: 5px;
+    border-color: rgb(110, 131, 248);
+    font-weight: lighter;
+    cursor: pointer;
+    margin-top: 50px;
 }
