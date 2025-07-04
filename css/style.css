@@ -545,3 +545,9 @@ main h2 {
     cursor: pointer;
     margin-top: 50px;
 }
+.img_usuario{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}

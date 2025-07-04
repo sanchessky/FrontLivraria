@@ -180,9 +180,6 @@ function carregar_manga() {
         })
 
 }
-
-
-
 let nome_carrinho = "carrinho"
 let produto_no_carrinho = localStorage.getItem(nome_carrinho) ? JSON.parse(localStorage.getItem(nome_carrinho)) : [];
 function adicionar_carrinho(id, foto, nome, preco, qtd) {
@@ -331,4 +328,49 @@ function carregar_produtos_carrinho() {
     });
 
 };
+
+
+let aute_usuario = "usuario_autenticado";
+
+if(window.localStorage.getItem(aute_usuario)){
+
+    let us = window.localStorage.getItem(aute_usuario);
+    us = JSON.parse(us);
+
+    let img_usuario = `<img src=${us.payload.fotousuario} class="img_usuario">`;
+    let nome_us = us.payload.nomeusuario;
+
+    document.getElementsByClassName("usuario")[0].style.padding="15px"
+    document.getElementsByClassName("usuario")[0].innerHTML = img_usuario + nome_us
+};
+
+
+
+
+function efetuarlogin(){
+    const usuario = document.getElementById("txtusuario")
+    const senha = document.getElementById("txtpassword")
+
+    fetch("http://127.0.0.1:5000/api/v1/usuarios/login",{
+        method:"POST",
+        headers:{
+            "accept": "application/json",
+            "content-type": "application/json"
+        },
+        body:JSON.stringify({
+            usuario:usuario.value,
+            senha:senha.value
+        })
+    })
+    .then((rs)=>rs.json())
+    .then((dados)=>{
+        window.localStorage.setItem(aute_usuario,JSON.stringify(dados));
+        usuario.value = "";
+        senha.value = "";
+        window.location.reload();
+    })
+    .catch((erro)=>console.error(erro))
+
+
+}
 
